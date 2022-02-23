@@ -1,0 +1,1 @@
+BLAST.Secure = {} Server = TriggerServerEvent

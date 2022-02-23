@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BLAST UI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+$(function(){
+	window.addEventListener("message", function(event) {
+        if (event.data.action == "displayLocker"){
+            $(".background_opacity").css("display", "block")
+            $("#locker").css("display", "block")
+            console.log("Open locker...")
+        }
+	});
+});
+</script>
+
+<style type="text/css">
+body, html{
+    font-family:"Trebuchet MS", sans-serif;
+    color:white;
+    padding:0;
+    margin:0;
+}
+.background_opacity{
+    display:none;
+}
+.opa_back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.5)
+}
+#locker{
+    display:none;
+}
+.leftbar{
+    height:100%;
+    width:300px;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    background-color:rgb(0,0,0);
+    overflow-x:hidden;
+} .title_leftbar{ font-size:2vh; } .title_leftbar br::selection{ background:transparent; }
+</style>
+
+<body>
+    <div class="root" id="root">
+
+        <div class="background_opacity">
+            <div class="opa_back"></div>
+        </div>
+     
+        <div class="locker" id="locker">
+
+            <!-- Leftbar -->
+            <!--<div class="leftbar">
+
+                <span class="title_leftbar">
+                  <center> <br><br>
+                    Blast locker
+                  </center>
+                </span>
+
+            </div>-->
+
+            <!-- Content locker -->
+            <div class="content_locker">
+            </div>
+
+        </div>
+        
+    </div>
+</body>
+
+</html>
